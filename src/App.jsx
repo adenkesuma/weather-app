@@ -1,35 +1,41 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import axios from 'axios';
+import './App.css';
+import Notifications from './components/notifications/Notifications';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [location, setLocation] = useState('');
+  const [data, setData] = useState();
+
+  const apiKey = '8a072cff6e233424ff03e75712d51947';
+  
+  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${apiKey}`;
+
+  const getData = () => {
+    axios.get(apiUrl)
+    .then(response => {
+      setData(response.data)
+      console.log(data)
+    })
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <nav className="navbar">
+        <Notifications />
+        <input 
+          className='navbar__input'
+          type="text"
+          placeholder="search"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          onKeyPress={getData}
+        />
+
+        {/* dark mode */}
+      </nav>
     </div>
   )
 }
 
-export default App
+export default App;
