@@ -2,10 +2,13 @@ import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import Notifications from './components/notifications/Notifications';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import DarkMode from './components/darkMode/DarkMode';
 
 function App() {
   const [location, setLocation] = useState('');
-  const [data, setData] = useState();
+  const [data, setData] = useState('');
 
   const apiKey = '8a072cff6e233424ff03e75712d51947';
   
@@ -15,24 +18,30 @@ function App() {
     axios.get(apiUrl)
     .then(response => {
       setData(response.data)
-      console.log(data)
     })
   }
 
   return (
     <div className="App">
       <nav className="navbar">
-        <Notifications />
-        <input 
-          className='navbar__input'
-          type="text"
-          placeholder="search"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-          onKeyPress={getData}
-        />
+        {/* notifications */}
+        <Notifications data={data}/>
+
+        {/* search */}
+        <div className='navbar__form'>
+          <FontAwesomeIcon className='navbar__icon' icon={faMagnifyingGlass} />
+          <input 
+            className='navbar__input'
+            type="text"
+            placeholder="search"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+            onKeyPress={getData}
+          />
+        </div>
 
         {/* dark mode */}
+        <DarkMode />
       </nav>
     </div>
   )

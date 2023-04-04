@@ -4,3 +4,22 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.navbar__form {
+  position: relative;
+}
+
+.navbar__icon {
+  position: absolute;
+  left: 3%;
+  top: 12px;
+}
+
+.navbar__input {
+  width: 440px;
+  padding: 12px 12px 12px 40px;
+  color: var(--font-color);
+  background-color: var(--background-gradient);
+  border-radius: 30px;
+  border: none;
+}

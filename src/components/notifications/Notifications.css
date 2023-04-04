@@ -1,7 +1,3 @@
-:root {
-    --background-gradient: rgba(238, 235, 221, 20%);
-}
-
 .notification {
     display: flex;
     flex-direction: row;
@@ -20,7 +16,19 @@
     height: 50px;
 }
 
+.notification__location {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+}
+
+.notification__location p {
+    font-size: 16px;
+}
+
 .notification__icon {
     display: block;
-    font-size: 25px;
+    font-size: 22px;
 }
