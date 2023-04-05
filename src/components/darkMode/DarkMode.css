@@ -37,7 +37,7 @@
 
 .slider:before {
     background-color: var(--font-color);
-    bottom: 4px;
+    bottom: 5px;
     content: " ";
     height: 30px;
     width: 30px;

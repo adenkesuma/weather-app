@@ -5,6 +5,7 @@ import Notifications from './components/notifications/Notifications';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import DarkMode from './components/darkMode/DarkMode';
+import Forecast from './components/forecast/Forecast';
 
 function App() {
   const [location, setLocation] = useState('');
@@ -22,7 +23,9 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="container">
+
+      {/* navbar */}
       <nav className="navbar">
         {/* notifications */}
         <Notifications data={data}/>
@@ -43,6 +46,11 @@ function App() {
         {/* dark mode */}
         <DarkMode />
       </nav>
+
+      {/* forecast */}
+      <main className='main'>
+        <Forecast />
+      </main>
     </div>
   )
 }
