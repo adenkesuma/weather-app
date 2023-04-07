@@ -48,9 +48,9 @@ function App() {
 
       {currentWeather && <CurrentWeather data={currentWeather}/>}
 
-      {/* <main className='main'>
-        <Forecast />
-      </main> */}
+      <main className='main'>
+        {forecast && <Forecast data={forecast}/>}
+      </main>
     </div>
   )
 }

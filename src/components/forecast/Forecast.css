@@ -1,4 +1,4 @@
-.forecast {
+.forecast-nav {
     width: 68.7%;
     display: flex;
     justify-content: space-between;
@@ -19,7 +19,7 @@
 .forecast__link {
     font-style: normal;
     text-decoration: none;
-    color: #fff;
+    color: var(--font-color);
 }
 
 .forecast__button-box {
