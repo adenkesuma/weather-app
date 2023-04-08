@@ -39,20 +39,23 @@
 
 .forecast__button {
     background-color: #0E8388;
+    color: #fff;
 }
 
 .accordion__flex {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 10px;
 }
 
 .accordion__card {
-    width: 100px;
+    width: 120px;
     padding: 20px;
-    background-color: var(--background-gradient);
+    background-color: var(--card-background);
+    color: #fff;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -78,51 +81,24 @@
     font-weight: 600;
 }
 
+.accordion__data {
+    font-size: 12px;
+}
+
+.panel-container {
+    width: 120px;
+    position: absolute;
+    bottom: 0;
+}
+
 .panel {
+    padding: 20px 10px;
     border-radius: 20px;
     background-color: #0E8388;
 }
 
-.panel__header {
-    border-radius: 20px 20px 0 0;
-    padding: 10px 15px;
-    background-color: #2E4F4F;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.panel__text {
-    font-size: 16px;
-    font-weight: 600;
-}
-
-.panel__content {
-    padding: 5px 15px 15px 15px;
-}
-
-.panel__layout {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.panel__temp {
-    font-size: 40px;
-    font-weight: 600;
-}
-
 .panel__data {
     font-size: 12px;
+    color: #fff;
 }
 
-.panel__right-side {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.right {
-    text-align: right;
-}

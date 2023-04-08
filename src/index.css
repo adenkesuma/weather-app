@@ -5,6 +5,8 @@
   --font-color: #1a1a1a;
   --background-color: #ffffff;
   --link-color: cornflowerblue;
+  --card-background: #0E8388;
+  --current-weather: rgba(156, 155, 154, 0.2);
   }
   
 [data-theme="dark"] {
@@ -12,6 +14,8 @@
   --font-color: #eaeaea;
   --background-color: #000000;
   --link-color: lightblue;
+  --card-background: rgba(238, 235, 221, 20%);
+  --current-weather: #0E8388;
 }
 
 * {

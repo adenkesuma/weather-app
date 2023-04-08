@@ -1,0 +1,16 @@
+.current-weather {
+    padding: 15px 20px;
+    border-radius: 20px;
+    background-color: var(--current-weather);
+}
+
+.current-weather__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.current-weather__temp {
+    font-size: 60px;
+    font-weight: 600;
+}

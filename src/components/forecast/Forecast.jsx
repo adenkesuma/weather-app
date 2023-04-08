@@ -6,6 +6,7 @@ import { useState } from 'react';
 const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; 
 
 const Forecast = ({ data }) => {
+
     const dayInAWeek = new Date().getDay();
     const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
         WEEK_DAYS.slice(0, dayInAWeek)
@@ -45,26 +46,17 @@ const Forecast = ({ data }) => {
                                         <p className='accordion__day'>{forecastDays[index]}</p>
                                         <img className='image' src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="logo" />
                                         <p className='accordion__temp'>{Math.round(item.main.temp)}°</p>
-                                    </div>
+                                    </div> 
                                 </AccordionItemButton>
                             </AccordionItemHeading>
-                            <AccordionItemPanel>
-                                <div className='panel'>
-                                    <div className='panel__header'>
-                                        <p className='panel__text'>{forecastDays[index]}</p>
-                                        <p className='panel__text'>{`${hours}.${minutes}`}</p>
-                                    </div>
-                                    <div className='panel__content'>
-                                            <div className='panel__layout'>
-                                                <p className='panel__temp'>{Math.round(item.main.temp)}°</p>
-                                                <img className='image' src={`http://openweathermap.org/img/wn/${item.weather[0].icon}.png`} alt="icon weather"/>
-                                            </div>
-                                            <p className='panel__data'>Feels like: <strong>{item.main.feels_like}°</strong></p>
-                                            <p className='panel__data'>Wind: <strong>{item.wind.deg}m/s</strong></p>
-                                            <p className='panel__data'>Pressure: <strong>{item.main.pressure}hPa</strong></p>
-                                            <p className='panel__data'>Humidity: <strong>{item.main.humidity}%</strong></p>
-                                        </div>
-                                </div>
+                            <AccordionItemPanel className='panel-container'>
+                                    <div className='panel'>
+                                        <p className='panel__data'>Feels like: <strong>{item.main.feels_like}°</strong></p>
+                                        <p className='panel__data'>Wind: <strong>{item.wind.deg}m/s</strong></p>
+                                        <p className='panel__data'>Pressure: <strong>{item.main.pressure}hPa</strong></p>
+                                        <p className='panel__data'>Humidity: <strong>{item.main.humidity}%</strong></p>
+                                    
+                                    </div> 
                             </AccordionItemPanel>
                         </AccordionItem>
                     ))}
