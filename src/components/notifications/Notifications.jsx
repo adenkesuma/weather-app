@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Notifications.css';
 
 const Notifications = ({ data }) => {
-    console.log(data)
     return (
         <div className="notification">
             <figure className="circle__block">
@@ -14,7 +13,7 @@ const Notifications = ({ data }) => {
             </figure>
             <div className='notification__location'>
                 <FontAwesomeIcon className='notification__icon' icon={faLocationDot} />
-                <p>{data.name}</p>
+                <p>{data.city}</p>
             </div>           
         </div>
     )

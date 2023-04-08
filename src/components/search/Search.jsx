@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { AsyncPaginate } from "react-select-async-paginate";
 import { GEO_API_URL, geoApiOptions } from "../../api";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import './Search.css';
 
 export default function Search({ onSearchChange }) {
     const [search, setSearch] = useState(null);
@@ -28,13 +31,34 @@ export default function Search({ onSearchChange }) {
         onSearchChange(searchData);
     }
 
+    const customStyles = {
+        control: (provided) => ({
+            ...provided,
+            backgroundColor: 'rgba(156, 155, 154, 0.2)',
+            borderRadius: '30px',
+            padding: '5px 5px 5px 30px',
+            width: '440px',
+            border: 'none',
+        }),
+        option: (provided, state) => ({
+            ...provided,
+            zIndex: '9999',
+            backgroundColor: state.isSelected ? '#007bff' : '#fff',
+            color: state.isSelected ? '#fff' : '#333',
+        }),
+    };
+
     return (
-        <AsyncPaginate
-            placeholder="search for city"
-            debounceTimeout={600}
-            value={search}
-            onChange={handleChange}
-            loadOptions={loadOptions}
-        />        
+        <div className="search__form">
+            <FontAwesomeIcon className="search__icon" icon={faSearch} />
+            <AsyncPaginate
+                styles={customStyles}
+                placeholder="search for city"
+                debounceTimeout={600}
+                value={search}
+                onChange={handleChange}
+                loadOptions={loadOptions}
+            />        
+        </div>
     )
 }

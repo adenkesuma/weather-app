@@ -1,0 +1,9 @@
+.search__form {
+    position: relative;
+}
+
+.search__icon {
+    position: absolute;
+    left: 3%;
+    top: 15px;
+}
