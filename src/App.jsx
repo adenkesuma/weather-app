@@ -7,6 +7,8 @@ import Forecast from './components/forecast/Forecast';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import Search from './components/search/Search';
 import CurrentWeather from './components/curernt-weather/CurrentWeather';
+import Chart from './components/chart/chart';
+import Map from './components/map/Map';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState('');
@@ -39,13 +41,23 @@ function App() {
       </nav>
 
       <main className='main'>
-        <div className='main__forecast'>
-          {forecast && <Forecast data={forecast}/>}
-        </div>
-        <div className='main__current-weather'>
-          {currentWeather && <CurrentWeather data={currentWeather}/>}
-        </div>
+        <section className='section-1'>
+          <div className='section-1__forecast'>
+            {forecast && <Forecast data={forecast}/>}
+          </div>
+          <div className='section-1__current-weather'>
+            {currentWeather && <CurrentWeather data={currentWeather}/>}
+          </div>
+        </section>
+        <section className="section-2">
+          <Map />
+          <Chart />
+        </section>
       </main>
+
+      <footer style={{textAlign: "center"}}>
+        <p style={{fontSize: "12px"}}>&copy; Copyright by aden 2023</p>
+      </footer>
     </div>
   )
 }

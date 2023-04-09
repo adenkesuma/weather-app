@@ -11,16 +11,28 @@
 }
 
 .main {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.section-1 {
   margin-top: 30px;
   display: flex;
   justify-content: space-between;
   gap: 30px;
 }
 
-.main__forecast {
+.section-1__forecast {
   width: 75%;
 }
 
-.main__current-weather {
+.section-1__current-weather {
   width: 25%;
+}
+
+.section-2 {
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
