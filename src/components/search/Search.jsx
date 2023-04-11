@@ -6,7 +6,7 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import './Search.css';
 
 export default function Search({ onSearchChange }) {
-    const [search, setSearch] = useState(null);
+    const [search, setSearch] = useState("");
 
     const loadOptions = (inputValue) => {
         return (

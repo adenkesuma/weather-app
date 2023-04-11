@@ -8,25 +8,37 @@ import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import Search from './components/search/Search';
 import CurrentWeather from './components/curernt-weather/CurrentWeather';
 import Chart from './components/chart/chart';
-import Map from './components/map/Map';
+import RandomPlace from './components/random-place/RandomPlace';
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState('');
   const [forecast, setForecast] = useState('');
+  const [shanghai, setShanghai] = useState('');
+  const [tokyo, setTokyo] = useState('');
   
   const handleOnSearchChange = (searchData) => {
     const [lat, lon] = searchData.value.split("");
 
     const currentWeatherFetch = fetch(`${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
     const forecastFetch = fetch(`${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WEATHER_API_KEY}&units=metric`);
+    const shanghaiFetch = fetch(
+      `${WEATHER_API_URL}/weather?lat=31.166666666&lon=121.466666666&appid=${WEATHER_API_KEY}&units=metric`
+    );
+    const tokyoFetch = fetch(
+      `${WEATHER_API_URL}/weather?lat=35.689444444&lon=139.691666666&appid=${WEATHER_API_KEY}&units=metric`
+    );
 
-    Promise.all([currentWeatherFetch, forecastFetch])
+    Promise.all([currentWeatherFetch, forecastFetch, shanghaiFetch, tokyoFetch])
     .then(async response => {
       const weatherResponse = await response[0].json();
       const forecastResponse = await response[1].json();
+      const shanghaiResponse = await response[2].json();
+      const tokyoResponse = await response[3].json();
 
       setCurrentWeather({city: searchData.label, ...weatherResponse });
       setForecast({city: searchData.label, ...forecastResponse });
+      setShanghai(shanghaiResponse);
+      setTokyo(tokyoResponse);
     })
     .catch((err) => console.log(err))
   };
@@ -50,7 +62,7 @@ function App() {
           </div>
         </section>
         <section className="section-2">
-          <Map />
+          <RandomPlace shanghai={shanghai} tokyo={tokyo}/>
           <Chart />
         </section>
       </main>

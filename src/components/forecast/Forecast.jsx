@@ -1,7 +1,5 @@
 import './Forecast.css';
 import { Accordion, AccordionItem, AccordionItemButton, AccordionItemHeading, AccordionItemPanel } from "react-accessible-accordion";
-import image from '../../assets/icons/010d.png';
-import { useState } from 'react';
 
 const WEEK_DAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']; 
 
@@ -11,10 +9,6 @@ const Forecast = ({ data }) => {
     const forecastDays = WEEK_DAYS.slice(dayInAWeek, WEEK_DAYS.length).concat(
         WEEK_DAYS.slice(0, dayInAWeek)
     );
-
-    let currentTime = new Date();
-    let hours = currentTime.getHours()
-    let minutes = currentTime.getMinutes()
 
     return (
         <div className='forecast'>
