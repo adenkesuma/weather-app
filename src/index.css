@@ -29,3 +29,8 @@ body {
   color: var(--font-color);
   font-family: 'Open Sans', sans-serif;
 }
+
+.heading-3 {
+  font-weight: 500;
+  margin-bottom: 15px;
+}
