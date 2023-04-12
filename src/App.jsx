@@ -63,7 +63,7 @@ function App() {
         </section>
         <section className="section-2">
           <RandomPlace shanghai={shanghai} tokyo={tokyo}/>
-          <Chart />
+          {forecast && <Chart />}
         </section>
       </main>
 

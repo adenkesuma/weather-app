@@ -59,17 +59,18 @@ export default function Chart() {
 
     return (
         <div className="chart">
-            <BarChart
+          <h3 className="heading-3 right">Statistic Chart</h3>
+          <BarChart
             width={800}
             height={240}
             data={data}
             margin={{
-                top: 5,
-                right: 0,
-                left: 20,
-                bottom: 5,
+              top: 5,
+              right: 0,
+              left: 20,
+              bottom: 5,
             }}
-            >
+          >
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="name" />
             <YAxis />
@@ -77,7 +78,7 @@ export default function Chart() {
             <Legend />
             <Bar dataKey="feels_like" fill="#0E8388" />
             <Bar dataKey="humidity" fill="var(--font-color)" />
-            </BarChart>
+          </BarChart>
         </div>
     );
 }
