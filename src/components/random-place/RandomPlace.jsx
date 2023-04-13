@@ -15,44 +15,51 @@ export default function RandomPlace({ shanghai, tokyo }) {
 
 
 const Shanghai = ({ data }) => {
-    const { name, sys, weather, main } = data;
+    const { name, sys, weather, main, wind } = data;
 
     return (
         <div className="random-place__box">
             <div className="left-side">
-              <p>
+              <p className="left-side__paragraph">
                 {name} {data && ","} {sys.country}
               </p>
-              <p>{weather[0].description}</p>
+              <p className="left-side__description">{weather[0].description}</p>
+              <p className="left-side__description">Wind-deg: {wind.deg}°</p>
+              <p className="left-side__description">Wind-speed: {wind.speed} km/h</p>
             </div>
             <div className="right-side">
               <img
+                className="right-side__image"
                 src={`http://openweathermap.org/img/wn/${weather[0].icon}.png`}
                 alt="icon"
               />
-              <p>{Math.round(main.temp)}°</p>
+              <p className="right-side__temp">{Math.round(main.temp)}°</p>
             </div>
         </div>
     )
 }
 
 const Tokyo = ({ data }) => {
-    const { name, sys, weather, main } = data;
+    const { name, sys, weather, main, wind } = data;
+    console.log(data)
 
     return (
       <div className="random-place__box">
         <div className="left-side">
-          <p>
+          <p className="left-side__paragraph">
             {name} {data && ","} {sys.country}
           </p>
-          <p>{weather[0].description}</p>
+          <p className="left-side__description">{weather[0].description}</p>
+          <p className="left-side__description">Wind-deg: {wind.deg}°</p>
+          <p className="left-side__description">Wind-speed: {wind.speed} km/h</p>
         </div>
         <div className="right-side">
           <img
+            className="right-side__image"
             src={`http://openweathermap.org/img/wn/${weather[0].icon}.png`}
             alt="icon"
           />
-          <p>{Math.round(main.temp)}°</p>
+          <p className="right-side__temp">{Math.round(main.temp)}°</p>
         </div>
       </div>
     );

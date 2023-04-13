@@ -62,7 +62,7 @@ export default function Chart() {
           <h3 className="heading-3 right">Statistic Chart</h3>
           <BarChart
             width={800}
-            height={240}
+            height={290}
             data={data}
             margin={{
               top: 5,

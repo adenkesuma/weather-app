@@ -67,7 +67,7 @@ function App() {
         </section>
       </main>
 
-      <footer style={{textAlign: "center"}}>
+      <footer style={{textAlign: "center", padding: "40px"}}>
         <p style={{fontSize: "12px"}}>&copy; Copyright by aden 2023</p>
       </footer>
     </div>
