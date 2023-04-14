@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     BarChart,
     Bar,
@@ -9,76 +9,79 @@ import {
     Legend,
 } from "recharts";
 
-const data = [
-    {
-        name: "Monday",
-        feels_like: 4000,
-        humidity: 2400,
-        amt: 2400,
-    },
-    {
-        name: "Tuesday",
-        feels_like: 3000,
-        humidity: 1398,
-        amt: 2210,
-    },
-    {
-        name: "Wednesday",
-        feels_like: 2000,
-        humidity: 9800,
-        amt: 2290,
-    },
-    {
-        name: "Thursday",
-        feels_like: 2780,
-        humidity: 3908,
-        amt: 2000,
-    },
-    {
-        name: "Friday",
-        feels_like: 1890,
-        humidity: 4800,
-        amt: 2181,
-    },
-    {
-        name: "Saturday",
-        feels_like: 2390,
-        humidity: 3800,
-        amt: 2500,
-    },
-    {
-        name: "Sunday",
-        feels_like: 3490,
-        humidity: 4300,
-        amt: 2100,
-    },
-];
 
+export default function Chart({ data }) {
+    const [weather, setWeather] = useState(
+        data.list.splice(0, 7).map((item) => {
+            return (
+                [ Math.round(item.main.feels_like), item.main.humidity ]
+            )
+        })
+    );
 
-export default function Chart() {
+    console.log(weather)
+    
+    const dataObj = [
+        {
+        name: "Monday",  
+        feels_like: weather[0][0],
+        humidity: weather[0][1],
+        },  
+        {
+        name: "Tuesday",  
+        feels_like: weather[1][0],
+        humidity: weather[1][1],
+        },  
+        {
+        name: "Wednesday",  
+        feels_like: weather[2][0],
+        humidity: weather[2][1],
+        },  
+        {
+        name: "Thursday",  
+        feels_like: weather[3][0],
+        humidity: weather[3][1],
+        },  
+        {
+        name: "Friday",  
+        feels_like: weather[4][0],
+        humidity: weather[4][1],
+        },  
+        {
+        name: "Saturday",  
+        feels_like: weather[5][0],
+        humidity: weather[5][1],
+        },  
+        {
+        name: "Sunday",  
+        feels_like: weather[6][0],
+        humidity: weather[6][1],
+        },  
+    ];    
+    
 
     return (
         <div className="chart">
-          <h3 className="heading-3 right">Statistic Chart</h3>
-          <BarChart
-            width={800}
-            height={290}
-            data={data}
-            margin={{
-              top: 5,
-              right: 0,
-              left: 20,
-              bottom: 5,
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="name" />
-            <YAxis />
-            <Tooltip />
-            <Legend />
-            <Bar dataKey="feels_like" fill="#0E8388" />
-            <Bar dataKey="humidity" fill="var(--font-color)" />
-          </BarChart>
+            <h3 className="heading-3 right">Statistic Chart</h3>
+            <BarChart
+                width={800}
+                height={290}
+                data={dataObj}
+                margin={{
+                top: 5,
+                right: 0,
+                left: 20,
+                bottom: 5,
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Bar dataKey="feels_like" fill="#0E8388" />
+                <Bar dataKey="humidity" fill="var(--font-color)" /> 
+            </BarChart>
         </div>
     );
 }

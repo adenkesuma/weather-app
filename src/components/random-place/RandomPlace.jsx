@@ -41,7 +41,6 @@ const Shanghai = ({ data }) => {
 
 const Tokyo = ({ data }) => {
     const { name, sys, weather, main, wind } = data;
-    console.log(data)
 
     return (
       <div className="random-place__box">

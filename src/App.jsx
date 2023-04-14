@@ -7,7 +7,7 @@ import Forecast from './components/forecast/Forecast';
 import { WEATHER_API_URL, WEATHER_API_KEY } from './api';
 import Search from './components/search/Search';
 import CurrentWeather from './components/curernt-weather/CurrentWeather';
-import Chart from './components/chart/chart';
+import Chart from './components/chart/Chart';
 import RandomPlace from './components/random-place/RandomPlace';
 
 function App() {
@@ -63,7 +63,7 @@ function App() {
         </section>
         <section className="section-2">
           <RandomPlace shanghai={shanghai} tokyo={tokyo}/>
-          {forecast && <Chart />}
+          {forecast && <Chart data={forecast}/>}
         </section>
       </main>
 
