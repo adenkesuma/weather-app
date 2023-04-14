@@ -68,7 +68,7 @@ function App() {
       </main>
 
       <footer style={{textAlign: "center", padding: "40px"}}>
-        <p style={{fontSize: "12px"}}>&copy; Copyright by aden 2023</p>
+        {forecast && <p style={{fontSize: "12px"}}>&copy; Copyright by aden 2023</p>}
       </footer>
     </div>
   )
