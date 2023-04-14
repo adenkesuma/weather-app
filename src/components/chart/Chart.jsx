@@ -62,10 +62,10 @@ export default function Chart({ data }) {
 
     return (
         <div className="chart">
-            <h3 className="heading-3 right">Statistic Chart</h3>
+            <h3 className="heading-3 right">Forecast Chart</h3>
             <BarChart
                 width={800}
-                height={290}
+                height={312}
                 data={dataObj}
                 margin={{
                 top: 5,
