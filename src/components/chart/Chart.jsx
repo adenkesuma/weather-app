@@ -7,6 +7,7 @@ import {
     CartesianGrid,
     Tooltip,
     Legend,
+    ResponsiveContainer,
 } from "recharts";
 
 
@@ -67,27 +68,27 @@ export default function Chart({ data }) {
     
 
     return (
-        <div className="chart" >
-            <h3 className="heading-3 right">Forecast Chart</h3>
-            <BarChart
-                width={800}
-                height={312}
-                data={dataObj}
-                margin={{
-                top: 5,
-                right: 0,
-                left: 20,
-                bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <Bar dataKey="feels_like" fill="#0E8388" />
-                <Bar dataKey="humidity" fill="var(--font-color)" /> 
-            </BarChart>
-        </div>
+      <div className="chart">
+        <h3 className="heading-3 right">Forecast Chart</h3>
+        <ResponsiveContainer minWidth={350} max-width={900} height={312}>
+          <BarChart
+            data={dataObj}
+            margin={{
+              top: 5,
+              right: 0,
+              left: 20,
+              bottom: 5,
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <Bar dataKey="feels_like" fill="#0E8388" />
+            <Bar dataKey="humidity" fill="var(--font-color)" />
+          </BarChart>
+        </ResponsiveContainer>
+      </div>
     );
 }
