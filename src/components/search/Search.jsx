@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import './Search.css';
 
-export default function Search({ onSearchChange }) {
+export default function Search({ onSearchChange, changeForecastChart }) {
     const [search, setSearch] = useState("");
 
     const loadOptions = (inputValue) => {

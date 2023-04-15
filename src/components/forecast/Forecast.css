@@ -102,3 +102,12 @@
     color: #fff;
 }
 
+@media only screen and (max-width: 900px) {
+    .accordion__card {
+        width: 100px;
+    }
+
+    .panel-container {
+        width: 100px;
+    }
+}

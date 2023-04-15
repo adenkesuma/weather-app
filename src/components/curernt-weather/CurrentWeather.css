@@ -4,7 +4,7 @@
     background-color: var(--current-weather);
 }
 
-.current-weather__box {
+.current-weather__box-2 {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,4 +13,10 @@
 .current-weather__temp {
     font-size: 60px;
     font-weight: 600;
+}
+
+@media only screen and (max-width: 900px) {
+    .current-weather__temp {
+        font-size: 80px;
+    }
 }

@@ -42,13 +42,13 @@ function App() {
     })
     .catch((err) => console.log(err))
   };
-  
+
   return (
     <div className="container">
 
       <nav className="navbar">
         <Notifications data={currentWeather}/>
-        <Search onSearchChange={handleOnSearchChange}/>
+        <Search onSearchChange={handleOnSearchChange} />
         <DarkMode />
       </nav>
 

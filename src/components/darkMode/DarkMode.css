@@ -66,3 +66,9 @@ input:checked + .slider:before {
 .user__image {
     width: 50px;
 }
+
+@media only screen and (max-width: 900px) {
+    figure .user__image {
+        display: none;
+    }
+}

@@ -4,14 +4,14 @@ export default function CurrentWeather({ data }) {
     return (
         <div className='current-weather'>
             <h2>Current Weather</h2>
-            <div>
+            <div className='current-weather__box-1'>
                 <div>
                     <p>{data.city}</p>
                     <p>{data.weather[0].description}</p>
                 </div>
                 <img src={`http://openweathermap.org/img/wn/${data.weather[0].icon}.png`} alt="icon"/>
             </div>
-            <div className='current-weather__box'>
+            <div className='current-weather__box-2'>
                 <span>
                     <p>Feels like: {data.main.feels_like}°</p>
                     <p>Wind: {data.wind.deg} m/s</p>

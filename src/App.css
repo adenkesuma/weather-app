@@ -36,3 +36,21 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media only screen and (max-width: 900px) {
+  .section-1 {
+    flex-direction: column;
+  }
+
+  .section-1__forecast {
+    width: 100%;
+  }
+
+  .section-1__current-weather {
+    width: 100%;
+  }
+
+  .section-2 {
+    flex-direction: column;
+  }
+}
