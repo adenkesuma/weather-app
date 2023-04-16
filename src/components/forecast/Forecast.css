@@ -52,7 +52,7 @@
 }
 
 .accordion__card {
-    width: 120px;
+    width: 110px;
     padding: 20px;
     background-color: var(--card-background);
     color: #fff;
@@ -93,7 +93,7 @@
     padding: 20px 10px;
     border-radius: 20px;
     background-color: #0E8388;
-    width: 120px;
+    width: 110px;
     position: absolute;
     bottom: 0;
 }
