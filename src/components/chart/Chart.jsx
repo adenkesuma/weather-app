@@ -70,7 +70,7 @@ export default function Chart({ data }) {
     return (
       <div className="chart">
         <h3 className="heading-3 right">Forecast Chart</h3>
-        <ResponsiveContainer minWidth={350} max-width={900} height={312}>
+        <ResponsiveContainer minWidth={280} max-width={1100} height={312}>
           <BarChart
             data={dataObj}
             margin={{

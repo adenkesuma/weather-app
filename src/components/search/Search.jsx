@@ -37,7 +37,8 @@ export default function Search({ onSearchChange, changeForecastChart }) {
             backgroundColor: 'rgba(156, 155, 154, 0.2)',
             borderRadius: '30px',
             padding: '5px 5px 5px 30px',
-            width: '440px',
+            maxWidth: '440px',
+            minWidth: '280px',
             border: 'none',
         }),
         option: (provided, state) => ({

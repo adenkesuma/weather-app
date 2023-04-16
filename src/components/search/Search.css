@@ -1,9 +1,11 @@
 .search__form {
     position: relative;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .search__icon {
     position: absolute;
-    left: 3%;
+    left: 5%;
     top: 15px;
 }
