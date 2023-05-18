@@ -20,14 +20,6 @@ export default function Chart({ data }) {
         })
     );
 
-    // const changeForecastChart = () => {
-    //     setForecastChart(
-    //         data.list.splice(0, 7).map((item) => {
-    //             return [Math.round(item.main.feels_like), item.main.humidity];
-    //         })
-    //     );
-    // }
-    
     const dataObj = [
         {
         name: "Monday",  
@@ -70,7 +62,7 @@ export default function Chart({ data }) {
     return (
       <div className="chart">
         <h3 className="heading-3 right">Forecast Chart</h3>
-        <ResponsiveContainer minWidth={280} max-width={1100} height={312}>
+        <ResponsiveContainer minWidth={280} width={800} height={312}>
           <BarChart
             data={dataObj}
             margin={{
